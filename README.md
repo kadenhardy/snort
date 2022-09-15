@@ -7,9 +7,10 @@ Snort is an open source tool for intrusion detection and intrusion prevention. S
 ## Files
 
 ### rules.sqli
-This is the Snort rule we are working with. The rule catches a packet with any source and any destination that contains a single quote in the payload. This might be a SQL injection attempt.
-  alert tcp any any -> any 80 (msg: "Form Based SQL Injection Detected"; content: "%27" ; sid:1000003; )
-  
+The Snort rule catches a packet with any source and any destination that contains a single quote in the payload. Snort flags this as a possible SQL injection attempt.
+```
+alert tcp any any -> any 80 (msg: "Form Based SQL Injection Detected"; content: "%27" ; sid:1000003; )
+```
 ### .pcap
 
-This is the packet we designed. It contains a single quote in the payload.
+This packet's payload contains a single quote, which triggers the Snort rule above.
