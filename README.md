@@ -29,3 +29,17 @@ STEP 4: Open Scapy and implement the command as seen below. Run `injection=IP(sr
 STEP 5: Run `snort -r injection.pcap -K none -A console -q -c sqli.rules`
 
 ![Command Screenshots](snort.PNG)
+
+## Packets
+
+This table that contains what packets are to be caught or pass.
+
+| Caught/Passed | Packet |
+| ------ | ------ |
+| Caught | single_quote_on_port_80=IP(src=“192.168.220.1”)/TCP(dport=80)/“%27" |
+| Caught | singe_quote_on_port_81= IP(src=“192.168.220.1”)/TCP(dport=81)/“%27" |
+| Caught |phrase_on_port_80= IP(src=“192.168.220.1”)/TCP(dport=80)/“Don%27t let me through!” |
+| Passed | double_quote_on_port_80= IP(src=“192.168.220.1”)/TCP(dport=80)/“%22" |
+| Passed | double_quote_on_port_81= IP(src=“192.168.220.1”)/TCP(dport=81)/“%22" |
+| Passed | phrase_on_port_80= IP(src=“192.168.220.1”)/TCP(dport=80)/“Let me through!” |
+| Passed | chess_phrase_on_port_80= IP(src=“192.168.220.1”)/TCP(dport=80)/“Justin is better than Magnus” |
