@@ -1,4 +1,4 @@
-# Testing Snort Rules
+# Testing a Snort Rule that catches SQL Injection Attempts
 Brian Busco, Ethan Thach, Kaden Makechnie-Hardy, Justin Mott, Quincy Taylor
 
 ## Outline
