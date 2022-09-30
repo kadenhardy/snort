@@ -11,9 +11,9 @@ The Snort rule catches a packet with any source and any destination that contain
 ```
 alert tcp any any -> any 80 (msg: "Form Based SQL Injection Detected"; content: "%27" ; sid:1000003; )
 ```
-### .pcap
+### injection.pcap
 
-This packet's payload contains a single quote, which triggers the Snort rule above.
+This pcap contains some packets that get caught and some that don't.
 
 
 ## How to Apply the Rule
