@@ -13,7 +13,7 @@ alert tcp any any -> any 80 (msg: "Form Based SQL Injection Detected"; content: 
 ```
 ### injection.pcap
 
-This pcap contains some packets that get caught and some that don't.
+This pcap contains some packets that get caught and some that don't. See the table below for detail.
 
 
 ## How to Apply the Rule
